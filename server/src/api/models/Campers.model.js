@@ -14,3 +14,7 @@ const CamperSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+const Camper = mongoose.model("Camper", CamperSchema);
+
+module.exports = Camper;

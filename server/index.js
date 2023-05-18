@@ -12,9 +12,12 @@ app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ limit: "5mb", extended: true }));
 
 //ROUTES
-const UserRoutes = require("./src/api/routes/routes");
+const UserRoutes = require("./src/api/routes/User.routes");
+const CamperRoutes = require("./src/api/routes/Camper.routes");
 
 app.use("/api/v1/user/", UserRoutes);
+
+app.use("/api/v1/camper/", CamperRoutes);
 
 app.use("*", (req, res, next) => {
   const error = new Error("Route not found");
